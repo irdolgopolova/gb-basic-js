@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
 <!--
 Необязательное задание.
@@ -25,17 +27,18 @@
 
 Уточнение: пользователь всегда вводит корректное положительное целое число.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  const number = prompt('Введите число:');
+    const number = prompt('Введите число:');
 
-  const hundredsCount = Math.trunc(number % 1000 / 100);
-  const dozensCount = Math.trunc(number % 100 / 10);
-  const unitsCount = Math.trunc(number % 10);
+    const hundredsCount = Math.trunc(number % 1000 / 100);
+    const dozensCount = Math.trunc(number % 100 / 10);
+    const unitsCount = Math.trunc(number % 10);
 
-  alert(`В числе ${number} количество сотен: ${hundredsCount}, десятков: ${dozensCount}, единиц: ${unitsCount}`);
+    alert(`В числе ${number} количество сотен: ${hundredsCount}, десятков: ${dozensCount}, единиц: ${unitsCount}`);
 
-</script>
+  </script>
 </body>
+
 </html>
