@@ -30,7 +30,7 @@
   <script>
     "use strict";
 
-    const number = prompt('Введите число:');
+    const number = +prompt('Введите число:');
 
     const hundredsCount = Math.trunc(number % 1000 / 100);
     const dozensCount = Math.trunc(number % 100 / 10);
