@@ -48,12 +48,9 @@
     product => "photos" in product && product.photos.length !== 0
   ));
 
-  const sortedProducts = products.sort(
+  console.log(products.sort(
     (firstProduct, secondProduct) => firstProduct.price - secondProduct.price
-  );
-
-  console.log(sortedProducts);
-
+  ));
 </script>
 </body>
 </html>
