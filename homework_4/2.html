@@ -86,19 +86,6 @@
     }
   }
 
-  // Демонстрация
-  const firstPost = new PostES5('Андрей', 'Как приготовить лазанью?');
-  const secondPost = new PostES6('Ирина', 'Особенности шарпеев');
-
-  console.log(firstPost);
-  console.log(secondPost);
-
-  firstPost.edit('Как приготовить вкусную лазанью?');
-  secondPost.edit('Особенности шарпеев на прогулке');
-
-  console.log(firstPost);
-  console.log(secondPost);
-
   // es5
   function AttachedPostES5(authorName, text) {
     PostES5.call(this, authorName, text);
@@ -126,20 +113,31 @@
     }
   }
 
+  // Демонстрация
+  const firstPost = new PostES5('Андрей', 'Как приготовить лазанью?');
+  const secondPost = new PostES6('Ирина', 'Особенности шарпеев');
   const thirdPost = new AttachedPostES5('Вадим', 'Красим машину за пару часов');
   const fourthPost = new AttachedPostES6('Татьяна', 'Тестировщик - кто это?');
 
+  console.log(firstPost);
+  console.log(secondPost);
   console.log(thirdPost);
   console.log(fourthPost);
 
-  thirdPost.edit('Красим автомобиль за пару часов');
-  fourthPost.edit('Тестировщик - важный человек в команде');
+  setTimeout(function () {
+    firstPost.edit('Как приготовить вкусную лазанью?');
+    secondPost.edit('Особенности шарпеев на прогулке');
+    thirdPost.edit('Красим автомобиль за пару часов');
+    fourthPost.edit('Тестировщик - важный человек в команде');
 
-  thirdPost.makeTextHighlighted();
-  fourthPost.makeTextHighlighted();
+    thirdPost.makeTextHighlighted();
+    fourthPost.makeTextHighlighted();
 
-  console.log(thirdPost);
-  console.log(fourthPost);
+    console.log(firstPost);
+    console.log(secondPost);
+    console.log(thirdPost);
+    console.log(fourthPost);
+  }, 2000);
 
 </script>
 </body>
