@@ -37,29 +37,21 @@
    * @returns {Object} Объект с разрядами или пустой объект.
    */
   function getDigitsOfNumber(number) {
-    let result = {};
-
     if (!Number.isInteger(number)) {
       console.error("Это не число!");
-      return result;
+      return {};
     }
 
     if (number < 0 || number > 999) {
       console.error('Число не входит в промежуток от 0 до 999 включительно');
-      return result;
+      return {};
     }
 
-    const hundredsCount = Math.trunc(number % 1000 / 100);
-    const dozensCount = Math.trunc(number % 100 / 10);
-    const unitsCount = Math.trunc(number % 10);
-
-    result = {
-      units: unitsCount,
-      dozens: dozensCount,
-      hundreds: hundredsCount
+    return {
+      units: Math.trunc(number % 10),
+      dozens: Math.trunc(number % 100 / 10),
+      hundreds: Math.trunc(number % 1000 / 100)
     };
-
-    return result;
   }
 
   const userNumber = +prompt("Введите число");

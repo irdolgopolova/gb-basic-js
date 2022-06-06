@@ -54,35 +54,25 @@
   function PostES5(authorName, text) {
     this.authorName = authorName;
     this.text = text;
-    this.updatedAt = this.getСurrentDatetime();
-  }
-
-  PostES5.prototype.getСurrentDatetime = function () {
-    const now = new Date();
-    return now.toLocaleString();
+    this.updatedAt = new Date();
   }
 
   PostES5.prototype.edit = function (newText) {
     this.text = newText;
-    this.updatedAt = this.getСurrentDatetime();
-  }
+    this.updatedAt = new Date();
+  };
 
   // es6
   class PostES6 {
     constructor(authorName, text) {
       this.authorName = authorName;
       this.text = text;
-      this.updatedAt = this.getСurrentDatetime();
-    }
-
-    getСurrentDatetime() {
-      const now = new Date();
-      return now.toLocaleString();
+      this.updatedAt = new Date();
     }
 
     edit(newText) {
       this.text = newText;
-      this.updatedAt = this.getСurrentDatetime();
+      this.updatedAt = new Date();
     }
   }
 
@@ -97,19 +87,16 @@
 
   AttachedPostES5.prototype.makeTextHighlighted = function() {
     this.highlighted = true;
-    this.updatedAt = this.getСurrentDatetime();
-  }
+    this.updatedAt = new Date();
+  };
 
   // es6
   class AttachedPostES6 extends PostES6 {
-    constructor(authorName, text) {
-      super(authorName, text);
-      this.highlighted = false;
-    }
+    highlighted = false;
 
     makeTextHighlighted() {
       this.highlighted = true;
-      this.updatedAt = this.getСurrentDatetime();
+      this.updatedAt = new Date();
     }
   }
 
