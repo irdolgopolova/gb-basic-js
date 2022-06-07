@@ -78,19 +78,19 @@
   должен правильно работать код из 3-го задания.
    */
 
-  const copyElementCopy = document.querySelector('.product').cloneNode(true);
+  const copyElementProduct = document.querySelector('.product').cloneNode(true);
 
-  copyElementCopy
+  copyElementProduct
     .querySelector('img')
     .src = "https://picsum.photos/id/1080/200/300";
 
-  copyElementCopy
+  copyElementProduct
     .querySelector('.productName')
     .textContent = "Товар 4";
 
   document
     .querySelector('.product:last-of-type')
-    .replaceWith(copyElementCopy);
+    .replaceWith(copyElementProduct);
 
   /*
   5. По истечении 2 секунд с момента открытия страницы первый товар должен быть
