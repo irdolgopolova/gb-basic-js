@@ -48,14 +48,14 @@ function setProductInfo(dataOfProduct) {
     let productPrice = 0;
     if (productRow) {
         let productCount = Number(productRow.cells[1].innerHTML);
-        productPrice = Number(productRow.cells[2].innerHTML);
+        productPrice = parseFloat(productRow.cells[2].innerHTML);
 
         productRow.cells[1].innerHTML = ++productCount;
-        productRow.cells[3].innerHTML = productCount * productPrice;
+        productRow.cells[3].innerHTML = parseFloat(productCount * productPrice).toFixed(2);
     } else {
         productRow = basketListTable.insertRow(basketListTable.rows.length);
         productRow.dataset.productId = dataOfProduct.id;
-        productPrice = Number(dataOfProduct.price);
+        productPrice = parseFloat(dataOfProduct.price);
 
         productRow.insertCell(0).innerHTML = dataOfProduct.name;
         productRow.insertCell(1).innerHTML = 1;
@@ -63,8 +63,8 @@ function setProductInfo(dataOfProduct) {
         productRow.insertCell(3).innerHTML = productPrice;
     }
 
-    let productTotalPrice = Number(basketTotalValue.innerHTML);
-    basketTotalValue.innerHTML = productTotalPrice + productPrice;
+    let productTotalPrice = parseFloat(basketTotalValue.innerHTML);
+    basketTotalValue.innerHTML = (productTotalPrice + productPrice).toFixed(2);
 }
 
 let featuredImgDark = document.querySelectorAll('.featuredImgDark');

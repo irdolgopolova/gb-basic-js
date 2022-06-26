@@ -737,11 +737,15 @@ body {
 .basketListTable {
     width: 100%;
     border-collapse: collapse;
+    border-bottom: 1px solid #9f9f9f;
+    line-height: 28px;
+    text-align: center;
 }
 
 .basketListTableHeader {
     text-transform: uppercase;
     font-size: 14px;
+    border-bottom: 1px solid #9f9f9f;
 }
 
 .basketTotal {
